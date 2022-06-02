@@ -1,6 +1,6 @@
-## Programador 2022
+# Programador 2022
 
-# Cuales son las ceremonias de Scrum?
+## Cuales son las ceremonias de Scrum?
 Son 4 :
 
 Sprint Planning Meeting (reunión de planificación del sprint). Se produce al iniciar cada
@@ -17,7 +17,7 @@ en el Sprint. La idea de dicha reunión es centrar al equipo en lo que salió bi
 debe mejorar para la próxima iteración. De ninguna manera se centra en lo que salió mal.
 
 
-# Artefactos  en Scrum
+## Artefactos  en Scrum
 
 Son 3:
 
@@ -29,7 +29,7 @@ Incremento(Increment) : Es el resultado obtenido después del cierre del sprint.
 Es la parte del proyecto producida durante el sprint. 
 
 
-# Roles en Scrum
+## Roles en Scrum
 Son 3:
 Product Owner : es quien recibe las solicitudes de los ejecutivos, clientes , usuarios y demás partes interesadas en la realización del proyecto.
 Scrum Master : Actúa como facilitador, un eliminador de impedimentos. Asegura que el proceso Scrum se use
