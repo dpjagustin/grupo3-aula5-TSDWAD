@@ -1,7 +1,7 @@
 # Programador 2022
 
-#Cuales son las ceremonias de Scrum?
+# Cuales son las ceremonias de Scrum?
 Son 4
 
 
-#Artefactos  en Scrum
+# Artefactos  en Scrum
