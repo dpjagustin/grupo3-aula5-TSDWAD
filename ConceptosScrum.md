@@ -41,4 +41,4 @@ Son 3:
 * Scrum Master : Actúa como facilitador, un eliminador de impedimentos. Asegura que el proceso Scrum se use
 como es debido.
 
-* Scrum Team : cada uno de los miembos del equipo Scrum, no es necesario que sean todos desarroladores.
+* Scrum Team : cada uno de los miembos del equipo Scrum, no es necesario que sean todos desarrolladores.
