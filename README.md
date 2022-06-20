@@ -4,7 +4,7 @@ Repositorio del grupo 3 del aula 5 para el modulo Programador de la Tecnicatura 
 👉 Grupo conformado por:
 - Pablo Fernando Ballatore
 - Leandro Salguero
-- Perez Jorge Agustín (actual scrum master)
+- Perez Jorge Agustín
 - Abigail Cabrera
 - Daniella Mazzini
 - Ivan Moreno Rivero
