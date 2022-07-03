@@ -1,7 +1,9 @@
 # grupo3-aula5-TSDWAD 👾
+
 Repositorio del grupo 3 del aula 5 para el modulo Programador de la Tecnicatura Superior en Desarrollo Web y Aplicaciones Digitales.
 
 👉 Grupo conformado por:
+
 - Pablo Fernando Ballatore
 - Leandro Salguero
 - Perez Jorge Agustín
@@ -13,4 +15,4 @@ Repositorio del grupo 3 del aula 5 para el modulo Programador de la Tecnicatura 
 - Octavio Arnaudo
 - Fabián Flores Vadell
 
-Agregar un cambio nuevo al archivo Readme...
+-Cambios agregados para probar comandos git
