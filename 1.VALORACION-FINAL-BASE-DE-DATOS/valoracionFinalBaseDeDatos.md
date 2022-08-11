@@ -1,8 +1,13 @@
 # BASE DE DATOS
 
 ## CREACION BASE DATOS Y TABLAS
+```sql
 CREATE DATABASE veterinariaCanina DEFAULT CHARSET utf8;
+```
+```sql
 USE veterinariaCanina;
+```
+```sql
 CREATE TABLE Dueno (
 DNI INT (10) NOT NULL  ,
 Nombre VARCHAR (30) NOT NULL ,
@@ -10,7 +15,8 @@ Apellido VARCHAR (30) NOT NULL ,
 Telefono VARCHAR (30) NOT NULL,
 Direccion VARCHAR (50) NOT NULL ,
 PRIMARY KEY (DNI)) CHARSET utf8;
-
+```
+```sql
 CREATE TABLE Perro (
 ID_Perro INT (10) NOT NULL AUTO_INCREMENT  ,
 Nombre VARCHAR (30) NOT NULL ,
@@ -21,9 +27,10 @@ PRIMARY KEY (ID_Perro) ,
 CONSTRAINT DNI_dueno_fk
 FOREIGN KEY (DNI_dueno) REFERENCES Dueno(DNI)
 ) CHARSET utf8;
+```
 
-;
 
+```sql
 CREATE TABLE Historial (
 ID_Historial INT (10) NOT NULL AUTO_INCREMENT  ,
 Fecha DATE NOT NULL,
@@ -34,54 +41,83 @@ PRIMARY KEY (ID_Historial) ,
 CONSTRAINT  Perro_fk
 FOREIGN KEY (Perro) REFERENCES Perro(ID_Perro)
 ) CHARSET utf8;
+```
 
 ## Insercion de Registros en las tablas
-
+```sql
 insert into dueno  
 values (30419759, 'Dani', 'Lopez', '3512457897', 'Patria 700');
+```
+```sql
 insert into dueno  
 values (34769125, 'Lean', 'Salguero', '353459789', ' Sucre 350');
+```
+```sql
 insert into dueno  
 values (36138957, 'Pedro', 'Gonzalez', '3516987827', ' Tucuman 650');
+```
+```sql
 insert into dueno  
 values (33916789, 'Ivan', 'Alvarez', '351897462', ' Estrada  45');
-
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Gri', '2017-12-15', 'H', 34769125);
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Pipi', '2014-10-11', 'H', 30419759);
-
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Negro', '2020-03-12', 'H', 30419759);
-
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Trucha', '2021-05-05', 'M', 33916789);
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Savora', '2022-09-08', 'M', 36138957);
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Pinnot', '2018-12-09', 'M', 36138957);
+```
+```sql
 insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
 values ( 'Igyy', '2010-11-05', 'M', 34769125);
+```
 
+
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2022-07-09', 6 , 'ConsultaBasica', 2000);
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2022-07-06', 2 , 'ConsultaUrgencia', 4000);
-
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2022-01-09', 1 , 'Peluqueria', 3000);
-
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2020-03-15', 3 , 'Inyectable', 5000);
-
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2018-12-09', 5 , 'Castracion', 7000);
-
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2018-12-09', 4 , 'Internacion', 20000);
-
+```
+```sql
 insert into historial ( Fecha, Perro, Descripcion, Monto)
 values ('2006-05-04', 7 , 'Inyectable', 100);
+```
 
 ## Resolucion de ejercicios
 
