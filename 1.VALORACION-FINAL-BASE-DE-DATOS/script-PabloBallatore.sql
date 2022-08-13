@@ -42,63 +42,27 @@ FOREIGN KEY (Perro) REFERENCES Perro(ID_Perro)
 
 ###  Inserte en la tabla correspondiente un nuevo animal (perro) como paciente y el dueño asociado a ese animal.
 
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Jym', '2015-11-20', 'H', 34769125);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Pipi', '2014-10-11', 'H', 30419759);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Negro', '2020-03-12', 'H', 30419759);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Trucha', '2021-05-05', 'M', 33916789);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Savora', '2022-09-08', 'M', 36138957);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Pinnot', '2018-12-09', 'M', 36138957);
-insert into perro ( Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 'Igyy', '2010-11-05', 'M', 34769125);
+insert into dueno  values (32312323, 'Ivan', 'Soriano', '3548231289', 'Av. Eden 200');
+insert into dueno  values (34769125, 'Claudia', 'Perez', '3548548978', ' San Vicente 123');
+insert into dueno  values (25125304, 'Damián', 'Díaz', '3548324574', ' Sarmiento 1294');
+insert into dueno  values (33916789, 'Pedro', 'Oliva', '3548746312', ' Chicago  1000');
 
-insert into dueno  
-values (32312323, 'Ivan', 'Soriano', '3548231289', 'Av. Eden 200');
-insert into dueno  
-values (34769125, 'Claudia', 'Perez', '3548548978', ' San Vicente 123');
-insert into dueno  
-values (25125304, 'Damián', 'Díaz', '3548324574', ' Sarmiento 1294');
-insert into dueno  
-values (33916789, 'Gastón', 'Oliva', '3548746312', ' Chicago  1000');
+insert into perro values ( DEFAULT,'Jym', '2015-11-20', 'M', 32312323);
+insert into perro values ( DEFAULT,'Sam', '2010-09-09', 'M', 34769125);
+insert into perro values ( DEFAULT,'Toto', '2020-09-01', 'M', 25125304);
+insert into perro values ( DEFAULT,'Lola', '2018-07-05', 'H', 33916789);
+insert into perro values ( DEFAULT,'Dana', '2019-03-24', 'H', 32312323);
 
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2022-07-09', 6 , 'ConsultaBasica', 2000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2022-07-06', 2 , 'ConsultaUrgencia', 4000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2022-01-09', 1 , 'Peluqueria', 3000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2020-03-15', 3 , 'Inyectable', 5000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2018-12-09', 5 , 'Castracion', 7000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2018-12-09', 4 , 'Internacion', 20000);
-insert into historial ( Fecha, Perro, Descripcion, Monto)
-values ('2006-05-04', 7 , 'Inyectable', 100);
-
-
-### Borre un animal que ya no va a ser atendido. Para ello consulte antes en el historial, algún animal que ya no sea atendido desde hace mucho tiempo.
-
-
-select * 
-from historial
-order by Fecha;
-delete from historial
-where Perro=7;
-delete from perro
-where ID_Perro=7;
+insert into historial values (DEFAULT,'2022-07-09', 1 , 'ConsultaBasica', 2000);
+insert into historial values (DEFAULT,'2022-07-06', 2 , 'ConsultaUrgencia', 4000);
+insert into historial values (DEFAULT,'2022-01-09', 3 , 'Peluqueria', 3000);
+insert into historial values (DEFAULT,'2020-03-15', 4 , 'Inyectable', 5000);
 
 ### Actualice la fecha de nacimiento de algún animal (perro) que usted considere.
 
-
 update perro
-set Fecha_nac = '2018-12-31'
-where ID_Perro=6;
+set Fecha_nac = '2019-09-02'
+where ID_Perro=5;
 
 ### Realice una consulta multitabla que arroje el nombre de todos los perros cuyos dueños se llaman Pedro
 
@@ -109,57 +73,7 @@ select p.Nombre
  where d.Nombre = 'Pedro';
  
 
-### Obtener todos los perros que asistieron a la peluquería en 2022
 
-
-select p.Nombre 
- from perro  p
- inner join historial h
- on h.perro = p.ID_Perro 
- where year(Fecha) = 2022;
-
-### Obtener los ingresos percibidos en Julio del 2022
-
-
-select sum(Monto)
- from historial
- where year(fecha)=2022 AND month(fecha)=07;
-
-
-### Insertar un nuevo registro en la tabla historial de un perro cuyo ID Perro es igual a 10.
-
-insert into perro (ID_Perro ,Nombre, Fecha_nac, Sexo, Dni_dueno)
-values ( 10,'Manchita', '2015-12-15', 'M', 34769125);
-
-
-###  Escriba una consulta que permita actualizar la dirección de un dueño. Su nueva dirección es Libertad 123
-
-
-update dueno
- set Direccion = "Dumesnil 248"
- where DNI= 34769125;
-
-
-### Vaciar la tabla historial y resetear el contador del campo ID.
-
-truncate historial;
- 
-### Obtener todos los dueños que tengan perros de menos de 5 años de edad que no hayan visitado la peluquería en el año 2022.
-
-
-SELECT Nombre,  TIMESTAMPDIFF(YEAR,Fecha_nac,CURDATE()) AS edad
-     FROM perro
-     where Sexo = 'M'
-     AND TIMESTAMPDIFF(YEAR,Fecha_nac,CURDATE()) <5;
-
-
-### Obtener todos los perros de sexo “Macho” nacidos entre 2020 y 2022
-
-
-SELECT * 
-     from perro
-     WHERE Sexo ='M'
-     AND Fecha_nac BETWEEN '2020-01-01' AND '2022-12-31';
 
 
 
